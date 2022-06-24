@@ -80,10 +80,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `keifgwinn`, `redirector`, `keif`, `keifgwinn`, `keif@keif.co.uk_client`, `keif@keif.co.uk`, `Redirector`, `Simple HTTP redirector with no dependencies`
-
+I wanted a very simple HTTP redirector container that could take some env variables and have no depenencies as almost everything else I could find was based on NGINX and way over the top to configure.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -105,11 +102,10 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+You need GOLANG to build and test locally and a OCI compatible container builder to build the complete container.
+
+* [GOLANG](https://go.dev/doc/tutorial/getting-started) 
+* [OCI builder](https://projectatomic.io/blog/2018/03/the-many-ways-to-build-oci-images/) 
 
 ### Installation
 
@@ -117,14 +113,16 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    git clone https://github.com/keifgwinn/redirector.git
    ```
-2. go build
+2. go build for local development
    ```sh
    go build
    ```
+3. docker build .
+   ```sh
+   docker build .
+   ```   
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -134,16 +132,18 @@ This is an example of how to list things you need to use the software and how to
    export REDIRECT_CODE = '307';
    ```
 
-2. Execute the program  
-    ```./redirector
+2. Execute the program
+ 
+   ```sh
+   ./redirector
    ```
 
 3. All in one line 
-    ```REDIRECT_URL='https://github.com/keifgwinn/redirector' REDIRECT_CODE=307 ./redirector
+   ```sh
+    REDIRECT_URL='https://github.com/keifgwinn/redirector' REDIRECT_CODE=307 ./redirector
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 <!-- ROADMAP -->
@@ -171,8 +171,6 @@ Don't forget to give the project a star! Thanks again!
 5. Open a Pull Request
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- LICENSE -->
 ## License
