@@ -39,8 +39,6 @@
     <a href="https://github.com/keifgwinn/redirector"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/keifgwinn/redirector">View Demo</a>
-    ·
     <a href="https://github.com/keifgwinn/redirector/issues">Report Bug</a>
     ·
     <a href="https://github.com/keifgwinn/redirector/issues">Request Feature</a>
@@ -184,7 +182,7 @@ Distributed under the GNU License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@keif](https://twitter.com/keif) - keif@keif.co.uk
+Keif Gwinn - [@keif](https://twitter.com/keif) - keif@keif.co.uk
 
 Project Link: [https://github.com/keifgwinn/redirector](https://github.com/keifgwinn/redirector)
 
@@ -198,7 +196,7 @@ Project Link: [https://github.com/keifgwinn/redirector](https://github.com/keifg
 * [This gist](https://gist.github.com/hSATAC/5343225)
 * [This answer](https://codereview.stackexchange.com/a/108670)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="center">(<a href="#top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
