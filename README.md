@@ -147,7 +147,7 @@ You need GOLANG to build and test locally and a OCI compatible container builder
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Configurable port to listen on
+- [x] Configurable port to listen on
 
 See the [open issues](https://github.com/keifgwinn/redirector/issues) for a full list of proposed features (and known issues).
 
