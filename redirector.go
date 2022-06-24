@@ -35,8 +35,25 @@ func check(err error) {
 func main() {
 	url := getStrEnv("REDIRECT_URL")
 	code := getStrEnv("REDIRECT_CODE")
+	port := os.Getenv("LISTEN_PORT")
+	
+	if port == "" {
+		port = "8080" // default to 8080
+	}
+
 	urlpattern := `[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)` // must be recognisable url
 	codepattern := `3[0-9][0-9]$`                                                                                  // 300 to 399 valid redirect code
+	portpattern := `^([1-9][0-9]{0,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])$`      //valid tcp port
+
+	portmatched, porterr := regexp.Match(portpattern, []byte(port))
+	check(porterr)
+	if portmatched {
+		fmt.Printf("√ '%s' is a valid port\n", port)
+	} else {
+		fmt.Printf("X '%s' is not a valid port\n", port)
+		log.Fatal(fmt.Sprintf("Invalid configuration."))
+	}
+
 	urlmatched, urlerr := regexp.Match(urlpattern, []byte(url))
 	check(urlerr)
 	if urlmatched {
@@ -61,7 +78,7 @@ func main() {
 	}
 
 	http.Handle("/", http.RedirectHandler(url, ret))
-	httperr := http.ListenAndServe(":8080", nil)
+	httperr := http.ListenAndServe(":"+port, nil)
 	if httperr != nil {
 		log.Fatal("ListenAndServe: ", httperr)
 	}
